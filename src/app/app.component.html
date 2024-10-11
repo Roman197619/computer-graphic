@@ -1,0 +1,84 @@
+<div class="app-root">
+  <div class="color-display">
+    <div class="color-box" [ngStyle]="{'background-color': currentColor}"></div>
+    <div class="color-values">
+      <div>
+        <label>CMYK:</label>
+        <input type="number" [(ngModel)]="cmyk.c" (input)="onCmykChange()"> -
+        <input type="number" [(ngModel)]="cmyk.m" (input)="onCmykChange()"> -
+        <input type="number" [(ngModel)]="cmyk.y" (input)="onCmykChange()"> -
+        <input type="number" [(ngModel)]="cmyk.k" (input)="onCmykChange()">
+        <div class="error" *ngIf="cmykError">{{ cmykError }}</div>
+        <div>
+          <label>Cyan:</label>
+          <input type="range" min="0" max="100" [(ngModel)]="cmyk.c" (input)="onCmykChange()" required>
+        </div>
+        <div>
+          <label>Magenta:</label>
+          <input type="range" min="0" max="100" [(ngModel)]="cmyk.m" (input)="onCmykChange()" required>
+        </div>
+        <div>
+          <label>Yellow:</label>
+          <input type="range" min="0" max="100" [(ngModel)]="cmyk.y" (input)="onCmykChange()" required>
+        </div>
+        <div>
+          <label>Black (K):</label>
+          <input type="range" min="0" max="100" [(ngModel)]="cmyk.k" (input)="onCmykChange()" required>
+        </div>
+      </div>
+      <div>
+        <label>RGB:</label>
+        <input type="number" [(ngModel)]="rgb.r" (input)="onRgbChange()" required> -
+        <input type="number" [(ngModel)]="rgb.g" (input)="onRgbChange()" required> -
+        <input type="number" [(ngModel)]="rgb.b" (input)="onRgbChange()" required>
+        <div class="error" *ngIf="rgbError">{{ rgbError }}</div>
+        <div>
+          <label>Red:</label>
+          <input type="range" min="0" max="255" [(ngModel)]="rgb.r" (input)="onRgbChange()">
+        </div>
+        <div>
+          <label>Green:</label>
+          <input type="range" min="0" max="255" [(ngModel)]="rgb.g" (input)="onRgbChange()">
+        </div>
+        <div>
+          <label>Blue:</label>
+          <input type="range" min="0" max="255" [(ngModel)]="rgb.b" (input)="onRgbChange()">
+        </div>
+      </div>
+      <div>
+        <label>HSV:</label>
+        <input type="number" [(ngModel)]="hsv.h" (input)="onHsvChange()" required> -
+        <input type="number" [(ngModel)]="hsv.s" (input)="onHsvChange()" required> -
+        <input type="number" [(ngModel)]="hsv.v" (input)="onHsvChange()" required>
+        <div class="error" *ngIf="hsvError">{{ hsvError }}</div>
+        <div>
+          <label>Hue:</label>
+          <input type="range" min="0" max="360" [(ngModel)]="hsv.h" (input)="onHsvChange()">
+        </div>
+        <div>
+          <label>Saturation:</label>
+          <input type="range" min="0" max="100" [(ngModel)]="hsv.s" (input)="onHsvChange()">
+        </div>
+        <div>
+          <label>Value:</label>
+          <input type="range" min="0" max="100" [(ngModel)]="hsv.v" (input)="onHsvChange()">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="color-picker">
+    <input type="color" [(ngModel)]="currentColor" (input)="onColorPickerChange($event)">
+  </div>
+  
+  <div class="color-palette">
+    <h3>Palette</h3>
+    <div class="palette">
+      <div 
+        *ngFor="let color of paletteColors" 
+        class="palette-color" 
+        [ngStyle]="{'background-color': color}" 
+        (click)="selectPaletteColor(color)">
+      </div>
+    </div>
+  </div>
+</div>
