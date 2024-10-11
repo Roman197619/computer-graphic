@@ -70,15 +70,3 @@
     <input type="color" [(ngModel)]="currentColor" (input)="onColorPickerChange($event)">
   </div>
   
-  <div class="color-palette">
-    <h3>Palette</h3>
-    <div class="palette">
-      <div 
-        *ngFor="let color of paletteColors" 
-        class="palette-color" 
-        [ngStyle]="{'background-color': color}" 
-        (click)="selectPaletteColor(color)">
-      </div>
-    </div>
-  </div>
-</div>

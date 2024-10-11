@@ -41,7 +41,6 @@ export class AppComponent {
   cmykError: string | null = null;
   hsvError: string | null = null;
 
-  paletteColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
 
   selectPaletteColor(color: string) {
     this.setColor(color);
