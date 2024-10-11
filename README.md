@@ -7,6 +7,9 @@
 -При изменении любой компоненты цвета все остальные представления этого
 цвета в двух других цветовых моделях пересчитываются автоматически.
 
+посмотреть проект без установки ангуляра можно по ссылке:
+https://idx.google.com/kglab1-2894743
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
