@@ -8,7 +8,7 @@
 цвета в двух других цветовых моделях пересчитываются автоматически.
 
 посмотреть проект без установки ангуляра можно по ссылке:
-https://idx.google.com/kglab1-2894743
+https://stackblitz.com/edit/znfydx?file=BUILD.bazel
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
