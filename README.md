@@ -1,38 +1,31 @@
-# KGLab1
-Приложение для перевода представлений цветов из  одной модели в другую.
--Есть возможность задавать точные цвета (поля
-ввода), 
--выбирать цвета из палитры , плавно
--изменять цвета (с помощью ползунков).
--При изменении любой компоненты цвета все остальные представления этого
-цвета в двух других цветовых моделях пересчитываются автоматически.
 
-посмотреть проект без установки ангуляра можно по ссылке:
-https://idx.google.com/kglab1-2894743
+# Приложение для контрастирования и эквализации гистограммы изображений
 
+Это приложение позволяет пользователям выполнять линейное растяжение контраста и эквализацию гистограммы изображений с использованием Python, OpenCV и Tkinter. Пользователи могут загружать изображения, настраивать параметры  и просматривать результаты в интерактивном режиме.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+## Возможности
 
-## Development server
+- **Загрузка изображений**: Пользователи могут загружать изображения для контрастирования и эквализации гистограммы.
+- **Линейное контрастирование**: Применяйте линейное контрастирование, используйте ползунки для изменения парметров алгоритма.
+- **Эквализация гистограммы**: Применяйте эквализацию гистограммы для улучшения контраста изображений.
+- **Арифметические операции**: Выполняйте сложение, вычитание, умножение и деление для двух загруженных изображений.
+- **Отображение результатов**: Отображаются оригинальные и обработанные изображения рядом друг с другом.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Требования
 
-## Code scaffolding
+Для запуска этого приложения необходимо установить следующие пакеты:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Python (версии 3.6 или выше)
+- OpenCV
+- NumPy
+- Tkinter
+- Pillow
 
-## Build
+## Пример
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Загрузите изображение для применения линейного  контрастирования.
+2. Настройте ползунки, чтобы увидеть изменения в реальном времени.
+3. Загрузите изображение для эквализации гистограммы, чтобы увидить результат.
+4. Загрузите два изображения, чтобы выполнить арифметические операции и просмотреть результаты.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![alt text](image.png)
