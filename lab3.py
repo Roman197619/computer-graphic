@@ -118,18 +118,20 @@ class App:
         if abs(x2 - x1) > abs(y2 - y1):  # Если линия больше по ширине
             if x1 > x2:  # Меняем местами начальную и конечную точки
                 x1, x2, y1, y2 = x2, x1, y2, y1
-            dx = x2 - x1
-            dy = y2 - y1
+                 
+            k = (y2 - y1) / (x2 - x1)
+            b = y1 - round(k * x1)
             for x in range(x1, x2 + 1):
-                y = y1 + dy * (x - x1) / dx
+                y = k * x + b
                 self.draw_pixel(x, round(y), color)
         else:  # Если линия больше по высоте
             if y1 > y2:  # Меняем местами начальную и конечную точки
                 x1, x2, y1, y2 = x2, x1, y2, y1
-            dx = x2 - x1
-            dy = y2 - y1
+
+            k = (x2 - x1) / (y2 - y1)
+            b = x1 - round(k * y1)
             for y in range(y1, y2 + 1):
-                x = x1 + dx * (y - y1) / dy
+                x = k * y + b
                 self.draw_pixel(round(x), y, color)
 
     def bresenham_line(self, x1, y1, x2, y2, color):
@@ -203,7 +205,7 @@ class App:
                 elapsed_time_ms = (end_time - start_time) / 1000
 
                 self.log_action(f"Линия: ({x1}, {y1}) -> ({x2}, {y2}), Алгоритм: {self.algorithm.get()}, ")
-                self.log_action(f"Время: {elapsed_time_ms:.1f} мс")
+                self.log_action(f"Время: {elapsed_time_ms:.1f} мкс")
 
                 self.color_index = (self.color_index + 1) % len(self.line_colors)
                 self.start_point = None
@@ -224,7 +226,7 @@ class App:
                 elapsed_time_ms = (end_time - start_time) / 1000
 
                 self.log_action(f"Окружность: Центр ({xc}, {yc}), Радиус: {radius},")
-                self.log_action(f"\n Алгоритм: {self.algorithm.get()}, Время: {elapsed_time_ms:.1f} мс")
+                self.log_action(f"\n Алгоритм: {self.algorithm.get()}, Время: {elapsed_time_ms:.1f} мкс")
 
                 self.color_index = (self.color_index + 1) % len(self.line_colors)
                 self.start_point = None
